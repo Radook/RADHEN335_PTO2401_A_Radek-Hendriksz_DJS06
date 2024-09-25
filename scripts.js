@@ -26,3 +26,16 @@ console.log(provinces.map(province => province.toUpperCase()));
 console.log(names.map(name => name.length));
 
 //Sorting
+console.log(provinces.sort());
+
+//Filtering Cape
+console.log(provinces.filter(province => !province.includes("Cape")))
+
+//Finding 'S'
+console.log(names.map(name => name.toUpperCase().split('').some(letter => letter === 'S')));
+
+//Creating Object Mapping
+console.log(names.reduce((accumulator, name, index) => {
+  accumulator[name] = provinces[index]; // Map name to the corresponding province
+  return accumulator; // Return the accumulator for the next iteration
+}, {}));
